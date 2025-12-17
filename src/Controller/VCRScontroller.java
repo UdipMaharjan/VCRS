@@ -10,10 +10,12 @@ package Controller;
  */
 import java.util.ArrayList;
 import Model.Admin;
+import Model.Voter;
 
 public class VCRScontroller {
 
     private ArrayList<Admin> admins = new ArrayList<>();
+    private ArrayList<Voter> voters = new ArrayList<>();
 
     public VCRScontroller() 
     {
@@ -33,4 +35,13 @@ public class VCRScontroller {
         }
         return false;
     }
+    public void addVoter(Voter v) 
+    {
+    voters.add(v);
+    }
+
+    public ArrayList<Voter> getVoters() 
+    {
+    return voters;
+     }
 }

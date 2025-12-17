@@ -11,17 +11,17 @@ public class Voter
     private String father;
     private String mother;
     private String grandfather;
-    private int age;
+    private int DOB;
     private String phone;
 
-    public Voter(String name, String citizenshipId, String father, String mother, String grandfather, int age, String phone) 
+    public Voter(String name, String citizenshipId, String father, String mother, String grandfather, int DOB, String phone) 
     {
         this.name = name;
         this.citizenshipId = citizenshipId;
         this.father = father;
         this.mother = mother;
         this.grandfather = grandfather;
-        this.age = age;
+        this.DOB = DOB;
         this.phone = phone;
     }
 
@@ -50,9 +50,9 @@ public class Voter
         return grandfather; 
     }
     
-    public int getAge() 
+    public int getDOB() 
     { 
-        return age; 
+        return DOB; 
     }
     
     public String getPhone() 
