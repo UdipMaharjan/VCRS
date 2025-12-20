@@ -44,4 +44,36 @@ public class VCRScontroller {
     {
     return voters;
      }
+    
+    public Voter findVoterByCitizenship(String citizenshipId) {
+    for (Voter v : voters) {
+        if (v.getCitizenshipId().equals(citizenshipId)) {
+            return v;
+        }
+    }
+    return null;
+}
+
+    public boolean updateVoter(String citizenshipId,
+                           String name,
+                           String father,
+                           String mother,
+                           String grandfather,
+                           int DOB,
+                           String phone) {
+
+    Voter v = findVoterByCitizenship(citizenshipId);
+
+    if (v != null) {
+        v.setName(name);
+        v.setFather(father);
+        v.setMother(mother);
+        v.setGrandfather(grandfather);
+        v.setAge(DOB);
+        v.setPhone(phone);
+        return true;
+    }
+    return false;
+}
+
 }

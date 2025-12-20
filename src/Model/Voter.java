@@ -59,5 +59,29 @@ public class Voter
     { 
         return phone; 
     }
+    public void setName(String name) {
+    this.name = name;
+}
+
+public void setFather(String father) {
+    this.father = father;
+}
+
+public void setMother(String mother) {
+    this.mother = mother;
+}
+
+public void setGrandfather(String grandfather) {
+    this.grandfather = grandfather;
+}
+
+public void setAge(int DOB) {
+    this.DOB = DOB;
+}
+
+public void setPhone(String phone) {
+    this.phone = phone;
+}
+
 }
 
