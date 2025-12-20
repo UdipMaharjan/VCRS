@@ -75,5 +75,16 @@ public class VCRScontroller {
     }
     return false;
 }
+    public boolean deleteVoter(String citizenshipId) {
+
+    for (int i = 0; i < voters.size(); i++) {
+        if (voters.get(i).getCitizenshipId().equals(citizenshipId)) {
+            voters.remove(i);
+            return true;
+        }
+    }
+    return false;
+}
+
 
 }

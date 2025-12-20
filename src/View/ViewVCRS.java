@@ -102,6 +102,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         btnUpdateActionPerformed = new javax.swing.JButton();
         txtname1 = new javax.swing.JTextField();
@@ -549,13 +550,20 @@ public class ViewVCRS extends javax.swing.JFrame {
             }
         });
 
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(264, 264, 264)
@@ -564,8 +572,10 @@ public class ViewVCRS extends javax.swing.JFrame {
                                 .addGap(17, 17, 17)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 10, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDelete)
+                        .addGap(323, 323, 323)
                         .addComponent(jLabel18)))
                 .addContainerGap())
         );
@@ -577,7 +587,9 @@ public class ViewVCRS extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jLabel18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(btnDelete))
                 .addContainerGap())
         );
 
@@ -918,6 +930,36 @@ public class ViewVCRS extends javax.swing.JFrame {
         cl.show(jPanel1, "card2");  
     }//GEN-LAST:event_BackUpdateActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+         int selectedRow = jTable1.getSelectedRow();
+
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(this, "Please select a voter");
+        return;
+    }
+
+    String citizenshipId =
+        jTable1.getValueAt(selectedRow, 1).toString(); // column index for citizenship
+
+    int confirm = JOptionPane.showConfirmDialog(
+        this,
+        "Are you sure you want to delete this voter?",
+        "Confirm Delete",
+        JOptionPane.YES_NO_OPTION
+    );
+
+    if (confirm != JOptionPane.YES_OPTION) {
+        return;
+    }
+
+    boolean deleted = controller.deleteVoter(citizenshipId);
+
+    if (deleted) {
+        JOptionPane.showMessageDialog(this, "Voter deleted successfully");
+        loadTable();
+    }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -945,6 +987,7 @@ public class ViewVCRS extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackUpdate;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnFindActionPerformed;
     private javax.swing.JButton btnUpdateActionPerformed;
     private javax.swing.JButton jButton1;
