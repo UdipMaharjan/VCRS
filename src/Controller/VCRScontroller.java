@@ -16,6 +16,19 @@ public class VCRScontroller {
 
     private ArrayList<Admin> admins = new ArrayList<>();
     private ArrayList<Voter> voters = new ArrayList<>();
+    private ArrayList<Voter> verifiedVoters = new ArrayList<>();
+    private ArrayList<Voter> deletedVoters = new ArrayList<>();
+    
+
+    public ArrayList<Voter> getVerifiedVoters() {
+        return verifiedVoters;
+    }
+
+    public ArrayList<Voter> getDeletedVoters() {
+        return deletedVoters;
+    }
+
+
 
     public VCRScontroller() 
     {
@@ -75,16 +88,34 @@ public class VCRScontroller {
     }
     return false;
 }
-    public boolean deleteVoter(String citizenshipId) {
+   public boolean deleteVoter(String citizenshipId) {
 
     for (int i = 0; i < voters.size(); i++) {
-        if (voters.get(i).getCitizenshipId().equals(citizenshipId)) {
+        Voter v = voters.get(i);
+
+        if (v.getCitizenshipId().equals(citizenshipId)) {
+            deletedVoters.add(v);
             voters.remove(i);
             return true;
         }
     }
     return false;
 }
+
+    public boolean verifyVoter(String citizenshipId) {
+
+    for (int i = 0; i < voters.size(); i++) {
+        Voter v = voters.get(i);
+
+        if (v.getCitizenshipId().equals(citizenshipId)) {
+            verifiedVoters.add(v);
+            voters.remove(i);
+            return true;
+        }
+    }
+    return false;
+}
+
 
 
 }
