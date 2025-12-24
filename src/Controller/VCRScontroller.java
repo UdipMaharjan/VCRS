@@ -20,11 +20,13 @@ public class VCRScontroller {
     private ArrayList<Voter> deletedVoters = new ArrayList<>();
     
 
-    public ArrayList<Voter> getVerifiedVoters() {
+    public ArrayList<Voter> getVerifiedVoters() 
+    {
         return verifiedVoters;
     }
 
-    public ArrayList<Voter> getDeletedVoters() {
+    public ArrayList<Voter> getDeletedVoters()
+    {
         return deletedVoters;
     }
 
@@ -48,6 +50,7 @@ public class VCRScontroller {
         }
         return false;
     }
+    
     public void addVoter(Voter v) 
     {
     voters.add(v);
@@ -72,7 +75,7 @@ public class VCRScontroller {
                            String father,
                            String mother,
                            String grandfather,
-                           int DOB,
+                           String DOB,
                            String phone) {
 
     Voter v = findVoterByCitizenship(citizenshipId);
@@ -82,7 +85,7 @@ public class VCRScontroller {
         v.setFather(father);
         v.setMother(mother);
         v.setGrandfather(grandfather);
-        v.setAge(DOB);
+        v.setDOB(DOB);
         v.setPhone(phone);
         return true;
     }
