@@ -23,8 +23,8 @@ public class ViewVCRS extends javax.swing.JFrame {
      * Creates new form ViewVCRS
      */
     public ViewVCRS() {
-        initComponents();
-        controller = new VCRScontroller();
+    initComponents();
+    controller = new VCRScontroller();
     }
     
     private void loadTable() {
@@ -164,7 +164,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         btnFindActionPerformed = new javax.swing.JButton();
         BackUpdate = new javax.swing.JButton();
-        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -175,8 +175,9 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(856, 740));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/UpperBanner.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/UpperBanner.png"))); // NOI18N
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
@@ -218,9 +219,9 @@ public class ViewVCRS extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/NepalMap.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/NepalMap.png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/DownBanner.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/DownBanner.png"))); // NOI18N
 
         jButton4.setBackground(new java.awt.Color(102, 255, 204));
         jButton4.setText("LOGIN");
@@ -230,12 +231,19 @@ public class ViewVCRS extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/UserIcon.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/UserIcon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(210, 210, 210))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -246,30 +254,25 @@ public class ViewVCRS extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4)
                         .addGap(109, 109, 109))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(119, 119, 119)))
                 .addComponent(jLabel2)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(210, 210, 210))
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(jButton2)
@@ -277,10 +280,14 @@ public class ViewVCRS extends javax.swing.JFrame {
                         .addGap(82, 82, 82)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
-                    .addComponent(jLabel2))
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jLabel3)
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel2, "card2");
@@ -433,15 +440,15 @@ public class ViewVCRS extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 360, 340));
+        jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 360, 340));
 
         jLabel27.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 36)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 153));
         jLabel27.setText("REGISTRATION");
         jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 270, 40));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/BGREG.png"))); // NOI18N
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 850, 570));
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGREG.png"))); // NOI18N
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
         jPanel1.add(jPanel3, "card3");
 
@@ -450,7 +457,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/ECM.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/ECM.png"))); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -500,28 +507,31 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField2)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                            .addComponent(jPasswordField1)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(119, 119, 119))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel6)
-                .addGap(36, 36, 36)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -531,9 +541,9 @@ public class ViewVCRS extends javax.swing.JFrame {
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addGap(12, 12, 12)
+                .addGap(27, 27, 27)
                 .addComponent(jButton6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -543,19 +553,19 @@ public class ViewVCRS extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126))
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Screenshot 2025-12-16 154052.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Screenshot 2025-12-16 154052.png"))); // NOI18N
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -567,21 +577,21 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(127, Short.MAX_VALUE)
+                .addContainerGap(113, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79))))
+                        .addGap(79, 79, 79))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addContainerGap())))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel9)
                 .addContainerGap())
         );
@@ -591,31 +601,11 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel10.setText("ADMIN PANEL OPENED");
+        jLabel10.setText("ADMIN PANEL ");
 
         jTable1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -633,7 +623,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Screenshot 2025-12-16 154052.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Screenshot 2025-12-16 154052.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel18MouseClicked(evt);
@@ -673,41 +663,40 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(283, 283, 283))))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(14, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel18))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))))
+                        .addContainerGap(22, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addGap(310, 310, 310))))))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel18)
                 .addContainerGap())
         );
@@ -815,8 +804,8 @@ public class ViewVCRS extends javax.swing.JFrame {
         });
         jPanel8.add(BackUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, 110, 30));
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/BGdesign.png"))); // NOI18N
-        jPanel8.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 550));
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGdesign.png"))); // NOI18N
+        jPanel8.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 550));
 
         jPanel1.add(jPanel8, "card6");
 
@@ -864,19 +853,19 @@ public class ViewVCRS extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(168, 168, 168)
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(128, 128, 128))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton10)
-                .addGap(42, 42, 42))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addGap(30, 30, 30))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -887,11 +876,11 @@ public class ViewVCRS extends javax.swing.JFrame {
                     .addComponent(jLabel29))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3))
+                .addGap(18, 18, 18)
                 .addComponent(jButton10)
-                .addGap(32, 32, 32))
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel11, "card7");
@@ -918,62 +907,154 @@ public class ViewVCRS extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card5");
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void BackUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackUpdateActionPerformed
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card2");
+    }//GEN-LAST:event_BackUpdateActionPerformed
+
+    private void btnFindActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformedActionPerformed
+        String citizenshipId = txtSearchCitizenship.getText();
+
+        Voter v = controller.findVoterByCitizenship(citizenshipId);
+
+        if (v == null) {
+            JOptionPane.showMessageDialog(this, "Voter not found");
+            return;
+        }
+
+        txtname1.setText(v.getName());
+        txtfather1.setText(v.getFather());
+        txtmother1.setText(v.getMother());
+        txtgrandfather1.setText(v.getGrandfather());
+        txtdob1.setText(String.valueOf(v.getDOB()));
+        txtphone1.setText(String.valueOf(v.getPhone()));
+
+        JOptionPane.showMessageDialog(this, "Voter loaded. You may update details.");
+    }//GEN-LAST:event_btnFindActionPerformedActionPerformed
+
+    private void txtSearchCitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchCitizenshipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtSearchCitizenshipActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card3");        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card6");
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2"); 
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- 
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtdob1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdob1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtdob1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    String email = jTextField2.getText();
-    String password = new String(jPasswordField1.getPassword());
-
-    if (controller.login(email, password)) 
-    {
-        JOptionPane.showMessageDialog(this, "Login Successful");
-
-        // open ADMIN PANEL
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card5"); // admin dashboard panel
-    } else 
-    {
-        JOptionPane.showMessageDialog(this, "Invalid Login");
-    }
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void txtfather1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfather1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_txtfather1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void txtname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtname1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtname1ActionPerformed
+
+    private void btnUpdateActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformedActionPerformed
+        try {
+            boolean updated = controller.updateVoter(
+                txtSearchCitizenship.getText(),
+                txtname1.getText(),
+                txtfather1.getText(),
+                txtmother1.getText(),
+                txtgrandfather1.getText(),
+                txtdob1.getText(),
+                txtphone1.getText()
+            );
+
+            if (updated) {
+                JOptionPane.showMessageDialog(this, "Voter updated successfully");
+
+                loadTable(); // refresh admin table
+            } else {
+                JOptionPane.showMessageDialog(this, "Update failed");
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Age must be a number");
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformedActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a voter");
+            return;
+        }
+
+        String citizenshipId =
+        jTable1.getValueAt(selectedRow, 1).toString(); // citizenship column
+
+        int confirm = JOptionPane.showConfirmDialog(
+            this,
+            "Are you sure you want to verify this voter?",
+            "Confirm Verification",
+            JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        boolean verified = controller.verifyVoter(citizenshipId);
+
+        if (verified) {
+            JOptionPane.showMessageDialog(this, "Voter verified successfully");
+
+            loadTable();           // Active voters
+            loadVerifiedTable();   // Verified voters
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card4");  
-    }//GEN-LAST:event_jButton4ActionPerformed
+        cl.show(jPanel1, "card7");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a voter");
+            return;
+        }
+
+        String citizenshipId =
+        jTable1.getValueAt(selectedRow, 1).toString(); // column index for citizenship
+
+        int confirm = JOptionPane.showConfirmDialog(
+            this,
+            "Are you sure you want to delete this voter?",
+            "Confirm Delete",
+            JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        boolean deleted = controller.deleteVoter(citizenshipId);
+
+        if (deleted) {
+            JOptionPane.showMessageDialog(this, "Voter deleted successfully");
+            loadTable();
+            loadDeletedTable();
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card2");
+    }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-         CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");  
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card2");
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -987,219 +1068,127 @@ public class ViewVCRS extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String email = jTextField2.getText();
+        String password = new String(jPasswordField1.getPassword());
+
+        if (controller.login(email, password))
+        {
+            JOptionPane.showMessageDialog(this, "Login Successful");
+
+            // open ADMIN PANEL
+            CardLayout cl = (CardLayout) jPanel1.getLayout();
+            cl.show(jPanel1, "card5"); // admin dashboard panel
+        } else
+        {
+            JOptionPane.showMessageDialog(this, "Invalid Login");
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnameActionPerformed
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // Required fields
+        if (txtname.getText().trim().isEmpty() ||
+            txtcitizenship.getText().trim().isEmpty() ||
+            txtfather.getText().trim().isEmpty() ||
+            txtmother.getText().trim().isEmpty() ||
+            txtgrandfather.getText().trim().isEmpty() ||
+            txtdob.getText().trim().isEmpty() ||
+            txtphone.getText().trim().isEmpty()) {
+
+            JOptionPane.showMessageDialog(this, "All fields are required");
+            return;
+        }
+
+        // Phone validation
+        if (!txtphone.getText().matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(this, "Phone number must be exactly 10 digits");
+            return;
+        }
+
+        // DOB format validation
+        String dob = txtdob.getText().trim();
+
+        if (!dob.matches("^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\\d{2}$"))
+        {
+            JOptionPane.showMessageDialog(this, "DOB must be in DD-MM-YYYY format");
+            return;
+        }
+
+        // DOB year validation
+        int year = Integer.parseInt(dob.substring(6, 10));
+        if (year > 2010)
+        {
+            JOptionPane.showMessageDialog(this, "DOB year must not be greater than 2010");
+            return;
+        }
+
+        try {
+            Voter v = new Voter(
+                txtname.getText().trim(),
+                txtcitizenship.getText().trim(),
+                txtfather.getText().trim(),
+                txtmother.getText().trim(),
+                txtgrandfather.getText().trim(),
+                dob,
+                txtphone.getText().trim()
+            );
+
+            controller.addVoter(v);
+            JOptionPane.showMessageDialog(this, "Voter Registered");
+            loadTable();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Something went wrong");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void txtfatherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfatherActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfatherActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-      // Required fields
-    if (txtname.getText().trim().isEmpty() ||
-        txtcitizenship.getText().trim().isEmpty() ||
-        txtfather.getText().trim().isEmpty() ||
-        txtmother.getText().trim().isEmpty() ||
-        txtgrandfather.getText().trim().isEmpty() ||
-        txtdob.getText().trim().isEmpty() ||
-        txtphone.getText().trim().isEmpty()) {
-
-        JOptionPane.showMessageDialog(this, "All fields are required");
-        return;
-    }
-
-    // Phone validation
-    if (!txtphone.getText().matches("\\d{10}")) {
-        JOptionPane.showMessageDialog(this, "Phone number must be exactly 10 digits");
-        return;
-    }
-
-    // DOB format validation
-    String dob = txtdob.getText().trim();
-
-    if (!dob.matches("^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19|20)\\d{2}$")) 
-    {
-        JOptionPane.showMessageDialog(this, "DOB must be in DD-MM-YYYY format");
-        return;
-    }
-
-    // DOB year validation
-    int year = Integer.parseInt(dob.substring(6, 10));
-    if (year > 2010) 
-    {
-        JOptionPane.showMessageDialog(this, "DOB year must not be greater than 2010");
-        return;
-    }
-
-    try {
-        Voter v = new Voter(
-            txtname.getText().trim(),
-            txtcitizenship.getText().trim(),
-            txtfather.getText().trim(),
-            txtmother.getText().trim(),
-            txtgrandfather.getText().trim(),
-            dob,                         
-            txtphone.getText().trim() 
-        );
-
-        controller.addVoter(v);
-        JOptionPane.showMessageDialog(this, "Voter Registered");
-        loadTable();
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Something went wrong");
-    }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void txtcitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcitizenshipActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcitizenshipActionPerformed
 
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnameActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");  
-    }//GEN-LAST:event_jLabel18MouseClicked
+        cl.show(jPanel1, "card2");
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void btnUpdateActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformedActionPerformed
-         try {
-        boolean updated = controller.updateVoter(
-            txtSearchCitizenship.getText(),
-            txtname1.getText(),
-            txtfather1.getText(),
-            txtmother1.getText(),
-            txtgrandfather1.getText(),
-            txtdob1.getText(),
-            txtphone1.getText()
-        );
-
-        if (updated) {
-            JOptionPane.showMessageDialog(this, "Voter updated successfully");
-
-            loadTable(); // refresh admin table
-        } else {
-            JOptionPane.showMessageDialog(this, "Update failed");
-        }
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Age must be a number");
-    }
-    }//GEN-LAST:event_btnUpdateActionPerformedActionPerformed
-
-    private void txtname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtname1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtname1ActionPerformed
-
-    private void txtfather1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfather1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfather1ActionPerformed
-
-    private void txtSearchCitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchCitizenshipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchCitizenshipActionPerformed
-
-    private void btnFindActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformedActionPerformed
-         String citizenshipId = txtSearchCitizenship.getText();
-
-    Voter v = controller.findVoterByCitizenship(citizenshipId);
-
-    if (v == null) {
-        JOptionPane.showMessageDialog(this, "Voter not found");
-        return;
-    }
-
-    txtname1.setText(v.getName());
-    txtfather1.setText(v.getFather());
-    txtmother1.setText(v.getMother());
-    txtgrandfather1.setText(v.getGrandfather());
-    txtdob1.setText(String.valueOf(v.getDOB()));
-    txtphone1.setText(String.valueOf(v.getPhone()));
-
-    JOptionPane.showMessageDialog(this, "Voter loaded. You may update details.");
-    }//GEN-LAST:event_btnFindActionPerformedActionPerformed
-
-    private void BackUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackUpdateActionPerformed
-         CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");  
-    }//GEN-LAST:event_BackUpdateActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-         int selectedRow = jTable1.getSelectedRow();
-
-    if (selectedRow == -1) {
-        JOptionPane.showMessageDialog(this, "Please select a voter");
-        return;
-    }
-
-    String citizenshipId =
-        jTable1.getValueAt(selectedRow, 1).toString(); // column index for citizenship
-
-    int confirm = JOptionPane.showConfirmDialog(
-        this,
-        "Are you sure you want to delete this voter?",
-        "Confirm Delete",
-        JOptionPane.YES_NO_OPTION
-    );
-
-    if (confirm != JOptionPane.YES_OPTION) {
-        return;
-    }
-
-    boolean deleted = controller.deleteVoter(citizenshipId);
-
-    if (deleted) {
-        JOptionPane.showMessageDialog(this, "Voter deleted successfully");
-        loadTable();
-        loadDeletedTable();
-    }
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card7");  
-    }//GEN-LAST:event_jButton8ActionPerformed
+        cl.show(jPanel1, "card4");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card5");  
-    }//GEN-LAST:event_jButton10ActionPerformed
+        cl.show(jPanel1, "card6");
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-  
-    int selectedRow = jTable1.getSelectedRow();
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card3");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    if (selectedRow == -1) {
-        JOptionPane.showMessageDialog(this, "Please select a voter");
-        return;
-    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-    String citizenshipId =
-        jTable1.getValueAt(selectedRow, 1).toString(); // citizenship column
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    int confirm = JOptionPane.showConfirmDialog(
-        this,
-        "Are you sure you want to verify this voter?",
-        "Confirm Verification",
-        JOptionPane.YES_NO_OPTION
-    );
-
-    if (confirm != JOptionPane.YES_OPTION) {
-        return;
-    }
-
-    boolean verified = controller.verifyVoter(citizenshipId);
-
-    if (verified) {
-        JOptionPane.showMessageDialog(this, "Voter verified successfully");
-
-        loadTable();           // Active voters
-        loadVerifiedTable();   // Verified voters
-    }
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void txtdob1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdob1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtdob1ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1265,7 +1254,7 @@ public class ViewVCRS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
