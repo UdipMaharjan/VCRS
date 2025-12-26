@@ -135,7 +135,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton6 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -485,12 +485,12 @@ public class ViewVCRS extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(102, 255, 204));
-        jButton6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
-        jButton6.setText("Login");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setBackground(new java.awt.Color(102, 255, 204));
+        btnLogin.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
@@ -523,7 +523,7 @@ public class ViewVCRS extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119))
         );
         jPanel7Layout.setVerticalGroup(
@@ -542,7 +542,7 @@ public class ViewVCRS extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
                 .addGap(27, 27, 27)
-                .addComponent(jButton6)
+                .addComponent(btnLogin)
                 .addContainerGap(99, Short.MAX_VALUE))
         );
 
@@ -1149,7 +1149,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String email = jTextField2.getText();
         String password = new String(jPasswordField1.getPassword());
 
@@ -1164,7 +1164,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Invalid Login");
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
@@ -1300,6 +1300,7 @@ public class ViewVCRS extends javax.swing.JFrame {
     private javax.swing.JButton BackUpdate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnFindActionPerformed;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnUpdateActionPerformed;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -1307,7 +1308,6 @@ public class ViewVCRS extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;

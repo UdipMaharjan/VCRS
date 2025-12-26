@@ -70,14 +70,8 @@ public class VCRScontroller {
     return null;
 }
 
-    public boolean updateVoter(String citizenshipId,
-                           String name,
-                           String father,
-                           String mother,
-                           String grandfather,
-                           String DOB,
-                           String phone) {
-
+    public boolean updateVoter(String citizenshipId,String name,String father, String mother,String grandfather,String DOB, String phone) 
+    {
     Voter v = findVoterByCitizenship(citizenshipId);
 
     if (v != null) {
