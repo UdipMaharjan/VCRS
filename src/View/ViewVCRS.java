@@ -123,7 +123,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        RegisterBtn = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -143,9 +143,9 @@ public class ViewVCRS extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        DeleteBtn = new javax.swing.JButton();
+        HistoryBtn = new javax.swing.JButton();
+        VerifyBtn = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         btnUpdateActionPerformed = new javax.swing.JButton();
         txtname1 = new javax.swing.JTextField();
@@ -175,7 +175,6 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(856, 740));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/UpperBanner.png"))); // NOI18N
 
@@ -359,12 +358,12 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Yu Gothic UI Semibold", 3, 12)); // NOI18N
         jLabel16.setText("Phone Number");
 
-        jButton7.setBackground(new java.awt.Color(153, 255, 153));
-        jButton7.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        jButton7.setText("Register ");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        RegisterBtn.setBackground(new java.awt.Color(153, 255, 153));
+        RegisterBtn.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        RegisterBtn.setText("Register ");
+        RegisterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                RegisterBtnActionPerformed(evt);
             }
         });
 
@@ -401,7 +400,7 @@ public class ViewVCRS extends javax.swing.JFrame {
                                     .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(RegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -436,7 +435,7 @@ public class ViewVCRS extends javax.swing.JFrame {
                     .addComponent(txtphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                .addComponent(RegisterBtn)
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -652,31 +651,31 @@ public class ViewVCRS extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 51, 51));
-        btnDelete.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        DeleteBtn.setBackground(new java.awt.Color(255, 51, 51));
+        DeleteBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        DeleteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        DeleteBtn.setText("Delete");
+        DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                DeleteBtnActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jButton8.setText("History");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        HistoryBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        HistoryBtn.setText("History");
+        HistoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                HistoryBtnActionPerformed(evt);
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(102, 255, 102));
-        jButton9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Verify");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        VerifyBtn.setBackground(new java.awt.Color(102, 255, 102));
+        VerifyBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        VerifyBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VerifyBtn.setText("Verify");
+        VerifyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                VerifyBtnActionPerformed(evt);
             }
         });
 
@@ -694,11 +693,11 @@ public class ViewVCRS extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(VerifyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(HistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel6Layout.createSequentialGroup()
@@ -715,9 +714,9 @@ public class ViewVCRS extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VerifyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel18)
                 .addContainerGap())
@@ -1059,7 +1058,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnUpdateActionPerformedActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void VerifyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerifyBtnActionPerformed
 
         int selectedRow = jTable1.getSelectedRow();
 
@@ -1090,14 +1089,14 @@ public class ViewVCRS extends javax.swing.JFrame {
             loadTable();           // Active voters
             loadVerifiedTable();   // Verified voters
         }
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_VerifyBtnActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void HistoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryBtnActionPerformed
         CardLayout cl = (CardLayout) jPanel1.getLayout();
         cl.show(jPanel1, "card7");
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_HistoryBtnActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
         int selectedRow = jTable1.getSelectedRow();
 
         if (selectedRow == -1) {
@@ -1126,7 +1125,7 @@ public class ViewVCRS extends javax.swing.JFrame {
             loadTable();
             loadDeletedTable();
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         CardLayout cl = (CardLayout) jPanel1.getLayout();
@@ -1174,7 +1173,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void RegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBtnActionPerformed
         // Required fields
         if (txtname.getText().trim().isEmpty() ||
             txtcitizenship.getText().trim().isEmpty() ||
@@ -1229,7 +1228,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Something went wrong");
         }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_RegisterBtnActionPerformed
 
     private void txtfatherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfatherActionPerformed
         // TODO add your handling code here:
@@ -1298,7 +1297,10 @@ public class ViewVCRS extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackUpdate;
-    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton DeleteBtn;
+    private javax.swing.JButton HistoryBtn;
+    private javax.swing.JButton RegisterBtn;
+    private javax.swing.JButton VerifyBtn;
     private javax.swing.JButton btnFindActionPerformed;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnUpdateActionPerformed;
@@ -1308,9 +1310,6 @@ public class ViewVCRS extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
