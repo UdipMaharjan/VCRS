@@ -251,4 +251,37 @@ public class VCRScontroller
         
         return true;
     }
+      
+// Insertion sort
+    public Voter[] insertionSortByName() {
+        if (front == -1) {
+            return new Voter[0];
+        }
+        
+        // Copy queue to array
+        int size = rear - front + 1;
+        Voter[] sortedArray = new Voter[size];
+        int index = 0;
+        
+        for (int i = front; i <= rear; i++) {
+            if (votersQueue[i] != null) {
+                sortedArray[index++] = votersQueue[i];
+            }
+        }
+        
+        // Insertion Sort
+        for (int i = 1; i < index; i++) {
+            Voter key = sortedArray[i];
+            int j = i - 1;
+            
+            // Move elements greater than key one position ahead
+            while (j >= 0 && sortedArray[j].getName().compareToIgnoreCase(key.getName()) > 0) {
+                sortedArray[j + 1] = sortedArray[j];
+                j = j - 1;
+            }
+            sortedArray[j + 1] = key;
+        }
+        
+        return sortedArray;
+    }
 }
