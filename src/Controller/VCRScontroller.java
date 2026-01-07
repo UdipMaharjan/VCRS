@@ -319,4 +319,84 @@ public class VCRScontroller
         return sortedArray;
     }
     
+    //Merge sort
+     public Voter[] mergeSortVerifiedByName() {
+        if (verifiedTop == -1) {
+            return new Voter[0];
+        }
+        
+        // Copy stack to array
+        int size = verifiedTop + 1;
+        Voter[] sortedArray = new Voter[size];
+        
+        for (int i = 0; i <= verifiedTop; i++) {
+            sortedArray[i] = verifiedStack[i];
+        }
+        
+        // Call merge sort
+        mergeSort(sortedArray, 0, size - 1);
+        
+        return sortedArray;
+    }
+    
+    // Merge Sort Helper Methods
+    private void mergeSort(Voter[] array, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            
+            // Sort first and second halves
+            mergeSort(array, left, mid);
+            mergeSort(array, mid + 1, right);
+            
+            // Merge the sorted halves
+            merge(array, left, mid, right);
+        }
+    }
+    
+    private void merge(Voter[] array, int left, int mid, int right) {
+        // Find sizes of two subarrays to be merged
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        
+        // Create temp arrays
+        Voter[] leftArray = new Voter[n1];
+        Voter[] rightArray = new Voter[n2];
+        
+        // Copy data to temp arrays
+        for (int i = 0; i < n1; i++) {
+            leftArray[i] = array[left + i];
+        }
+        for (int j = 0; j < n2; j++) {
+            rightArray[j] = array[mid + 1 + j];
+        }
+        
+        // Merge the temp arrays
+        int i = 0, j = 0;
+        int k = left;
+        
+        while (i < n1 && j < n2) {
+            if (leftArray[i].getName().compareToIgnoreCase(rightArray[j].getName()) <= 0) {
+                array[k] = leftArray[i];
+                i++;
+            } else {
+                array[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+        
+        // Copy remaining elements of leftArray
+        while (i < n1) {
+            array[k] = leftArray[i];
+            i++;
+            k++;
+        }
+        
+        // Copy remaining elements of rightArray
+        while (j < n2) {
+            array[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
 }
