@@ -399,4 +399,72 @@ public class VCRScontroller
             k++;
         }
     }
+     // ===================== BINARY SEARCH =====================
+    
+    // Binary Search by Name in MainTable (requires sorted data)
+    public Voter binarySearchByName(String searchName) {
+        if (front == -1) {
+            return null;
+        }
+        
+        // Step 1: Sort the queue data using Insertion Sort
+        Voter[] sortedArray = insertionSortByName();
+        
+        if (sortedArray.length == 0) {
+            return null;
+        }
+        
+        // Step 2: Perform Binary Search
+        int left = 0;
+        int right = sortedArray.length - 1;
+        
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            
+            // Compare search name with middle element
+            int comparison = searchName.trim().compareToIgnoreCase(sortedArray[mid].getName().trim());
+            
+            if (comparison == 0) {
+                // Found exact match
+                return sortedArray[mid];
+            } else if (comparison < 0) {
+                // Search in left half
+                right = mid - 1;
+            } else {
+                // Search in right half
+                left = mid + 1;
+            }
+        }
+        
+        // Not found
+        return null;
+    }
+    
+    // Get search statistics for demonstration
+    public String getSearchStatistics(String searchName) {
+        if (front == -1) {
+            return "Queue is empty";
+        }
+        
+        Voter[] sortedArray = insertionSortByName();
+        int comparisons = 0;
+        int left = 0;
+        int right = sortedArray.length - 1;
+        
+        while (left <= right) {
+            comparisons++;
+            int mid = (left + right) / 2;
+            int comparison = searchName.trim().compareToIgnoreCase(sortedArray[mid].getName().trim());
+            
+            if (comparison == 0) {
+                return "Found in " + comparisons + " comparisons using Binary Search";
+            } else if (comparison < 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        
+        return "Not found after " + comparisons + " comparisons";
+    }
 }

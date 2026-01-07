@@ -147,6 +147,7 @@ private void loadDeletedTable() {
         jLabel27 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -157,15 +158,18 @@ private void loadDeletedTable() {
         jPasswordField1 = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         MainTable = new javax.swing.JTable();
-        jLabel18 = new javax.swing.JLabel();
         DeleteBtn = new javax.swing.JButton();
         HistoryBtn = new javax.swing.JButton();
         VerifyBtn = new javax.swing.JButton();
+        SortMainTableBtn = new javax.swing.JButton();
+        BinarySearchBtn = new javax.swing.JButton();
+        txtSearchName = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         UpdateBtn = new javax.swing.JButton();
         txtname1 = new javax.swing.JTextField();
@@ -193,6 +197,8 @@ private void loadDeletedTable() {
         jButton10 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        SortDeletedTableBtn = new javax.swing.JButton();
+        SortVerifiedTableBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -302,7 +308,7 @@ private void loadDeletedTable() {
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel3)
@@ -472,6 +478,17 @@ private void loadDeletedTable() {
         jPanel1.add(jPanel3, "card3");
 
         jPanel4.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton6.setBackground(new java.awt.Color(255, 102, 102));
+        jButton6.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jButton6.setText("Back ");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 510, 90, 30));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -584,43 +601,15 @@ private void loadDeletedTable() {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Screenshot 2025-12-16 154052.png"))); // NOI18N
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
-            }
-        });
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 65, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(113, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addContainerGap())))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabel9)
-                .addContainerGap())
-        );
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGlogin.png"))); // NOI18N
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
         jPanel1.add(jPanel4, "card4");
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel10.setText("ADMIN PANEL ");
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MainTable.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         MainTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -664,15 +653,10 @@ private void loadDeletedTable() {
         ));
         jScrollPane1.setViewportView(MainTable);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Screenshot 2025-12-16 154052.png"))); // NOI18N
-        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel18MouseClicked(evt);
-            }
-        });
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 821, 347));
 
         DeleteBtn.setBackground(new java.awt.Color(255, 51, 51));
-        DeleteBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        DeleteBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
         DeleteBtn.setForeground(new java.awt.Color(255, 255, 255));
         DeleteBtn.setText("Delete");
         DeleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -680,14 +664,17 @@ private void loadDeletedTable() {
                 DeleteBtnActionPerformed(evt);
             }
         });
+        jPanel6.add(DeleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 100, 40));
 
-        HistoryBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        HistoryBtn.setBackground(new java.awt.Color(153, 255, 255));
+        HistoryBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 16)); // NOI18N
         HistoryBtn.setText("History");
         HistoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HistoryBtnActionPerformed(evt);
             }
         });
+        jPanel6.add(HistoryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 470, 100, 40));
 
         VerifyBtn.setBackground(new java.awt.Color(102, 255, 102));
         VerifyBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
@@ -698,49 +685,43 @@ private void loadDeletedTable() {
                 VerifyBtnActionPerformed(evt);
             }
         });
+        jPanel6.add(VerifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 100, 40));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap(22, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(VerifyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(HistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(jLabel10)
-                                    .addGap(310, 310, 310))))))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VerifyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel18)
-                .addContainerGap())
-        );
+        SortMainTableBtn.setText("Sort");
+        SortMainTableBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SortMainTableBtnActionPerformed(evt);
+            }
+        });
+        jPanel6.add(SortMainTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, -1, -1));
+
+        BinarySearchBtn.setText("Search");
+        BinarySearchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BinarySearchBtnActionPerformed(evt);
+            }
+        });
+        jPanel6.add(BinarySearchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
+
+        txtSearchName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchNameActionPerformed(evt);
+            }
+        });
+        jPanel6.add(txtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 180, -1));
+
+        jButton7.setBackground(new java.awt.Color(255, 102, 102));
+        jButton7.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jButton7.setText("Back ");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 520, 90, 30));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGadmin.png"))); // NOI18N
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
         jPanel1.add(jPanel6, "card5");
 
@@ -945,26 +926,44 @@ private void loadDeletedTable() {
         jLabel29.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel29.setText("Verified");
 
+        SortDeletedTableBtn.setText("Sort");
+        SortDeletedTableBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SortDeletedTableBtnActionPerformed(evt);
+            }
+        });
+
+        SortVerifiedTableBtn.setText("Sort");
+        SortVerifiedTableBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SortVerifiedTableBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(SortDeletedTableBtn)
+                                .addGap(73, 73, 73)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(SortVerifiedTableBtn)
+                                .addGap(101, 101, 101)
+                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(21, 21, 21))
         );
         jPanel11Layout.setVerticalGroup(
@@ -973,7 +972,9 @@ private void loadDeletedTable() {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SortDeletedTableBtn)
+                    .addComponent(SortVerifiedTableBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2)
@@ -1147,16 +1148,6 @@ private void loadDeletedTable() {
         }
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");
-    }//GEN-LAST:event_jLabel18MouseClicked
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");
-    }//GEN-LAST:event_jLabel9MouseClicked
-
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected())
         {
@@ -1292,6 +1283,159 @@ private void loadDeletedTable() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void SortMainTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortMainTableBtnActionPerformed
+        Voter[] sortedVoters = controller.insertionSortByName();
+    
+    if (sortedVoters.length == 0) {
+        JOptionPane.showMessageDialog(this, "No voters to sort");
+        return;
+    }
+    
+    // Load sorted data into MainTable
+    javax.swing.table.DefaultTableModel model =
+        (javax.swing.table.DefaultTableModel) MainTable.getModel();
+    model.setRowCount(0);
+    
+    for (Voter v : sortedVoters) {
+        if (v != null) {
+            model.addRow(new Object[]{
+                v.getName(),
+                v.getCitizenshipId(),
+                v.getFather(),
+                v.getMother(),
+                v.getGrandfather(),
+                v.getDOB(),
+                v.getPhone()
+            });
+        }
+    }
+    
+    JOptionPane.showMessageDialog(this, "MainTable sorted by Name using Insertion Sort");
+    }//GEN-LAST:event_SortMainTableBtnActionPerformed
+
+    private void SortDeletedTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortDeletedTableBtnActionPerformed
+         Voter[] sortedVoters = controller.selectionSortDeletedByName();
+    
+    if (sortedVoters.length == 0) {
+        JOptionPane.showMessageDialog(this, "No deleted voters to sort");
+        return;
+    }
+    
+    // Load sorted data into DeletedTable
+    javax.swing.table.DefaultTableModel model =
+        (javax.swing.table.DefaultTableModel) DeletedTable.getModel();
+    model.setRowCount(0);
+    
+    for (Voter v : sortedVoters) {
+        if (v != null) {
+            model.addRow(new Object[]{
+                v.getName(),
+                v.getCitizenshipId(),
+                v.getDOB(),
+                v.getPhone()
+            });
+        }
+    }
+    
+    JOptionPane.showMessageDialog(this, "DeletedTable sorted by Name using Selection Sort");
+    }//GEN-LAST:event_SortDeletedTableBtnActionPerformed
+
+    private void SortVerifiedTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortVerifiedTableBtnActionPerformed
+         Voter[] sortedVoters = controller.mergeSortVerifiedByName();
+    
+    if (sortedVoters.length == 0) {
+        JOptionPane.showMessageDialog(this, "No verified voters to sort");
+        return;
+    }
+    
+    // Load sorted data into VerifiedTable
+    javax.swing.table.DefaultTableModel model =
+        (javax.swing.table.DefaultTableModel) VerifiedTable.getModel();
+    model.setRowCount(0);
+    
+    for (Voter v : sortedVoters) {
+        if (v != null) {
+            model.addRow(new Object[]{
+                v.getName(),
+                v.getCitizenshipId(),
+                v.getDOB(),
+                v.getPhone(),
+                "Verified"
+            });
+        }
+    }
+    
+    JOptionPane.showMessageDialog(this, "VerifiedTable sorted by Name using Merge Sort");
+    }//GEN-LAST:event_SortVerifiedTableBtnActionPerformed
+
+    private void BinarySearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinarySearchBtnActionPerformed
+        String searchName = txtSearchName.getText().trim();
+    
+    if (searchName.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter a name to search");
+        return;
+    }
+    
+    // Perform Binary Search
+    Voter foundVoter = controller.binarySearchByName(searchName);
+    
+    if (foundVoter == null) {
+        String stats = controller.getSearchStatistics(searchName);
+        JOptionPane.showMessageDialog(this, 
+            "Voter not found!\n" + stats, 
+            "Binary Search Result", 
+            JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+    
+    // Display found voter details
+    String stats = controller.getSearchStatistics(searchName);
+    String details = "✓ VOTER FOUND using Binary Search!\n\n" +
+                     "Name: " + foundVoter.getName() + "\n" +
+                     "Citizenship ID: " + foundVoter.getCitizenshipId() + "\n" +
+                     "Father: " + foundVoter.getFather() + "\n" +
+                     "Mother: " + foundVoter.getMother() + "\n" +
+                     "Grandfather: " + foundVoter.getGrandfather() + "\n" +
+                     "DOB: " + foundVoter.getDOB() + "\n" +
+                     "Phone: " + foundVoter.getPhone() + "\n\n" +
+                     stats;
+    
+    JOptionPane.showMessageDialog(this, details, "Binary Search Result", JOptionPane.INFORMATION_MESSAGE);
+    
+    // Optional: Highlight the row in MainTable
+    highlightVoterInTable(foundVoter);
+}
+
+// Helper method to highlight found voter in MainTable
+private void highlightVoterInTable(Voter foundVoter) {
+    javax.swing.table.DefaultTableModel model =
+        (javax.swing.table.DefaultTableModel) MainTable.getModel();
+    
+    // Find the row with matching citizenship ID
+    for (int i = 0; i < model.getRowCount(); i++) {
+        String citizenshipId = model.getValueAt(i, 1).toString();
+        if (citizenshipId.equals(foundVoter.getCitizenshipId())) {
+            MainTable.setRowSelectionInterval(i, i);
+            MainTable.scrollRectToVisible(MainTable.getCellRect(i, 0, true));
+            break;
+        }
+    }
+    }//GEN-LAST:event_BinarySearchBtnActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card2");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.show(jPanel1, "card2");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void txtSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchNameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1319,11 +1463,15 @@ private void loadDeletedTable() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackUpdate;
+    private javax.swing.JButton BinarySearchBtn;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JTable DeletedTable;
     private javax.swing.JButton HistoryBtn;
     private javax.swing.JTable MainTable;
     private javax.swing.JButton RegisterBtn;
+    private javax.swing.JButton SortDeletedTableBtn;
+    private javax.swing.JButton SortMainTableBtn;
+    private javax.swing.JButton SortVerifiedTableBtn;
     private javax.swing.JButton UpdateBtn;
     private javax.swing.JTable VerifiedTable;
     private javax.swing.JButton VerifyBtn;
@@ -1335,6 +1483,8 @@ private void loadDeletedTable() {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1345,7 +1495,6 @@ private void loadDeletedTable() {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1384,6 +1533,7 @@ private void loadDeletedTable() {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField txtSearchCitizenship;
+    private javax.swing.JTextField txtSearchName;
     private javax.swing.JTextField txtcitizenship;
     private javax.swing.JTextField txtdob;
     private javax.swing.JTextField txtdob1;
