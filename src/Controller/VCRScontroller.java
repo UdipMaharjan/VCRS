@@ -284,4 +284,39 @@ public class VCRScontroller
         
         return sortedArray;
     }
+     
+    //Selection Sort
+    public Voter[] selectionSortDeletedByName() {
+        if (deletedTop == -1) {
+            return new Voter[0];
+        }
+        
+        // Copy stack to array
+        int size = deletedTop + 1;
+        Voter[] sortedArray = new Voter[size];
+        
+        for (int i = 0; i <= deletedTop; i++) {
+            sortedArray[i] = deletedStack[i];
+        }
+        
+        // Selection Sort
+        for (int i = 0; i < size - 1; i++) {
+            int minIndex = i;
+            
+            // Find minimum element in unsorted part
+            for (int j = i + 1; j < size; j++) {
+                if (sortedArray[j].getName().compareToIgnoreCase(sortedArray[minIndex].getName()) < 0) {
+                    minIndex = j;
+                }
+            }
+            
+            // Swap minimum element with first element
+            Voter temp = sortedArray[minIndex];
+            sortedArray[minIndex] = sortedArray[i];
+            sortedArray[i] = temp;
+        }
+        
+        return sortedArray;
+    }
+    
 }
