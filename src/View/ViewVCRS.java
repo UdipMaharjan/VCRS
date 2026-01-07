@@ -27,62 +27,82 @@ public class ViewVCRS extends javax.swing.JFrame {
     controller = new VCRScontroller();
     }
     
-    private void loadTable() {
-
+   private void loadTable()
+  {
     javax.swing.table.DefaultTableModel model =
-        (javax.swing.table.DefaultTableModel) jTable1.getModel();
-
+        (javax.swing.table.DefaultTableModel) MainTable.getModel();
     model.setRowCount(0); // clear old rows
-    for (Model.Voter v : controller.getVoters()) 
-    {
-        model.addRow(new Object[]{
-            v.getName(),
-            v.getCitizenshipId(),
-            v.getFather(),
-            v.getMother(),
-            v.getGrandfather(),
-            v.getDOB(),
-            v.getPhone()
-        });
+    
+    int front = controller.getFront();
+    int rear = controller.getRear();
+    
+    // Check if queue is empty
+    if (front == -1 || front > rear) {
+        return;
+    }
+    
+    // Load voters from queue (front to rear)
+    Model.Voter[] votersQueue = controller.getVotersQueue();
+    for (int i = front; i <= rear; i++) {
+        if (votersQueue[i] != null) {
+            Model.Voter v = votersQueue[i];
+            model.addRow(new Object[]{
+                v.getName(),
+                v.getCitizenshipId(),
+                v.getFather(),
+                v.getMother(),
+                v.getGrandfather(),
+                v.getDOB(),
+                v.getPhone()
+            });
+        }
     }
 }
     
-    private void loadDeletedTable() {
-
+private void loadDeletedTable() {
     javax.swing.table.DefaultTableModel model =
-        (javax.swing.table.DefaultTableModel) jTable2.getModel();
-
+        (javax.swing.table.DefaultTableModel) DeletedTable.getModel();
     model.setRowCount(0);
-
-    for (Voter v : controller.getDeletedVoters()) {
-        model.addRow(new Object[]{
-            v.getName(),
-            v.getCitizenshipId(),
-            v.getDOB(),
-            v.getPhone()
-        });
+    
+    int deletedTop = controller.getDeletedTop();
+    
+    // Load from stack (top to bottom - most recent first)
+    Voter[] deletedStack = controller.getDeletedStack();
+    for (int i = deletedTop; i >= 0; i--) {
+        if (deletedStack[i] != null) {
+            Voter v = deletedStack[i];
+            model.addRow(new Object[]{
+                v.getName(),
+                v.getCitizenshipId(),
+                v.getDOB(),
+                v.getPhone()
+            });
+        }
     }
 }
     
-    private void loadVerifiedTable() {
-
+ private void loadVerifiedTable() {
     javax.swing.table.DefaultTableModel model =
-        (javax.swing.table.DefaultTableModel) jTable3.getModel();
-
+        (javax.swing.table.DefaultTableModel) VerifiedTable.getModel();
     model.setRowCount(0);
-
-    for (Voter v : controller.getVerifiedVoters()) {
-        model.addRow(new Object[]{
-            v.getName(),
-            v.getCitizenshipId(),
-            v.getDOB(),
-            v.getPhone(),
-            "Verified"
-        });
+    
+    int verifiedTop = controller.getVerifiedTop();
+    
+    // Load from stack (top to bottom - most recent first)
+    Voter[] verifiedStack = controller.getVerifiedStack();
+    for (int i = verifiedTop; i >= 0; i--) {
+        if (verifiedStack[i] != null) {
+            Voter v = verifiedStack[i];
+            model.addRow(new Object[]{
+                v.getName(),
+                v.getCitizenshipId(),
+                v.getDOB(),
+                v.getPhone(),
+                "Verified"
+            });
+        }
     }
 }
-
-
 
 
     /**
@@ -141,13 +161,13 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        MainTable = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
         DeleteBtn = new javax.swing.JButton();
         HistoryBtn = new javax.swing.JButton();
         VerifyBtn = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        btnUpdateActionPerformed = new javax.swing.JButton();
+        UpdateBtn = new javax.swing.JButton();
         txtname1 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -167,9 +187,9 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        DeletedTable = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        VerifiedTable = new javax.swing.JTable();
         jButton10 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -602,8 +622,8 @@ public class ViewVCRS extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel10.setText("ADMIN PANEL ");
 
-        jTable1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        MainTable.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        MainTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -642,7 +662,7 @@ public class ViewVCRS extends javax.swing.JFrame {
                 "Name", "Citizenship", "Father's Name", "Mother's Name", "GrandFather's Name", "DateofBirth", "PhoneNumber"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(MainTable);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Screenshot 2025-12-16 154052.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -727,15 +747,15 @@ public class ViewVCRS extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(153, 204, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnUpdateActionPerformed.setBackground(new java.awt.Color(102, 255, 102));
-        btnUpdateActionPerformed.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        btnUpdateActionPerformed.setText("Update");
-        btnUpdateActionPerformed.addActionListener(new java.awt.event.ActionListener() {
+        UpdateBtn.setBackground(new java.awt.Color(102, 255, 102));
+        UpdateBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        UpdateBtn.setText("Update");
+        UpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformedActionPerformed(evt);
+                UpdateBtnActionPerformed(evt);
             }
         });
-        jPanel8.add(btnUpdateActionPerformed, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 421, 90, 30));
+        jPanel8.add(UpdateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 421, 90, 30));
 
         txtname1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 51, 0), 3));
         txtname1.addActionListener(new java.awt.event.ActionListener() {
@@ -832,7 +852,7 @@ public class ViewVCRS extends javax.swing.JFrame {
 
         jPanel11.setBackground(new java.awt.Color(153, 204, 255));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        DeletedTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -869,9 +889,9 @@ public class ViewVCRS extends javax.swing.JFrame {
                 "Name", "CitizenshipID", "DOB", "Phone"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(DeletedTable);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        VerifiedTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -908,7 +928,7 @@ public class ViewVCRS extends javax.swing.JFrame {
                 "Name", "CitizenshipID", "DOB", "Phone", "Status"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(VerifiedTable);
 
         jButton10.setBackground(new java.awt.Color(255, 102, 102));
         jButton10.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
@@ -1033,7 +1053,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtname1ActionPerformed
 
-    private void btnUpdateActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformedActionPerformed
+    private void UpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBtnActionPerformed
         try {
             boolean updated = controller.updateVoter(
                 txtSearchCitizenship.getText(),
@@ -1056,11 +1076,11 @@ public class ViewVCRS extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Age must be a number");
         }
-    }//GEN-LAST:event_btnUpdateActionPerformedActionPerformed
+    }//GEN-LAST:event_UpdateBtnActionPerformed
 
     private void VerifyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerifyBtnActionPerformed
 
-        int selectedRow = jTable1.getSelectedRow();
+        int selectedRow = MainTable.getSelectedRow();
 
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a voter");
@@ -1068,7 +1088,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         }
 
         String citizenshipId =
-        jTable1.getValueAt(selectedRow, 1).toString(); // citizenship column
+        MainTable.getValueAt(selectedRow, 1).toString(); // citizenship column
 
         int confirm = JOptionPane.showConfirmDialog(
             this,
@@ -1097,7 +1117,7 @@ public class ViewVCRS extends javax.swing.JFrame {
     }//GEN-LAST:event_HistoryBtnActionPerformed
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
-        int selectedRow = jTable1.getSelectedRow();
+        int selectedRow = MainTable.getSelectedRow();
 
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Please select a voter");
@@ -1105,7 +1125,7 @@ public class ViewVCRS extends javax.swing.JFrame {
         }
 
         String citizenshipId =
-        jTable1.getValueAt(selectedRow, 1).toString(); // column index for citizenship
+        MainTable.getValueAt(selectedRow, 1).toString(); // column index for citizenship
 
         int confirm = JOptionPane.showConfirmDialog(
             this,
@@ -1159,7 +1179,9 @@ public class ViewVCRS extends javax.swing.JFrame {
             // open ADMIN PANEL
             CardLayout cl = (CardLayout) jPanel1.getLayout();
             cl.show(jPanel1, "card5"); // admin dashboard panel
-        } else
+            loadTable();
+        } 
+        else
         {
             JOptionPane.showMessageDialog(this, "Invalid Login");
         }
@@ -1298,12 +1320,15 @@ public class ViewVCRS extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackUpdate;
     private javax.swing.JButton DeleteBtn;
+    private javax.swing.JTable DeletedTable;
     private javax.swing.JButton HistoryBtn;
+    private javax.swing.JTable MainTable;
     private javax.swing.JButton RegisterBtn;
+    private javax.swing.JButton UpdateBtn;
+    private javax.swing.JTable VerifiedTable;
     private javax.swing.JButton VerifyBtn;
     private javax.swing.JButton btnFindActionPerformed;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnUpdateActionPerformed;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -1356,9 +1381,6 @@ public class ViewVCRS extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField txtSearchCitizenship;
