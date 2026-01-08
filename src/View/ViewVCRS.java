@@ -115,17 +115,17 @@ private void loadDeletedTable() {
     private void initComponents() {
 
         jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        Banner = new javax.swing.JLabel();
+        MainPanel = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         registrationPanel = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
@@ -190,8 +190,10 @@ private void loadDeletedTable() {
         jLabel26 = new javax.swing.JLabel();
         btnFindActionPerformed = new javax.swing.JButton();
         BackUpdate = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         historyPanel = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         DeletedTable = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -201,12 +203,15 @@ private void loadDeletedTable() {
         jLabel29 = new javax.swing.JLabel();
         SortDeletedTableBtn = new javax.swing.JButton();
         SortVerifiedTableBtn = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(860, 755));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/UpperBanner.png"))); // NOI18N
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/UpperBanner.png"))); // NOI18N
 
-        jPanel1.setLayout(new java.awt.CardLayout());
+        MainPanel.setPreferredSize(new java.awt.Dimension(850, 560));
+        MainPanel.setLayout(new java.awt.CardLayout());
 
         homePanel.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -216,6 +221,7 @@ private void loadDeletedTable() {
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("   VOTER CARD REGISTRATION   ");
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -223,6 +229,7 @@ private void loadDeletedTable() {
         });
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         jButton1.setText("Home");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +238,7 @@ private void loadDeletedTable() {
         });
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
+        jButton2.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         jButton2.setText("Register");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,6 +247,7 @@ private void loadDeletedTable() {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 204));
+        jButton3.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         jButton3.setText("Update");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,9 +257,8 @@ private void loadDeletedTable() {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/NepalMap.png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/DownBanner.png"))); // NOI18N
-
         jButton4.setBackground(new java.awt.Color(102, 255, 204));
+        jButton4.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         jButton4.setText("LOGIN");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,46 +268,49 @@ private void loadDeletedTable() {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/UserIcon.png"))); // NOI18N
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/DownBanner.png"))); // NOI18N
+
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
         homePanelLayout.setHorizontalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(210, 210, 210))
-            .addGroup(homePanelLayout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(homePanelLayout.createSequentialGroup()
                 .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(homePanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(homePanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4)
-                        .addGap(109, 109, 109))
-                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(119, 119, 119)))
+                        .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(109, 109, 109))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3)
+                                .addGap(30, 30, 30)))))
                 .addComponent(jLabel2)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 837, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(homePanelLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(28, 28, 28)
                         .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(jButton2)
@@ -307,17 +318,16 @@ private void loadDeletedTable() {
                         .addGap(82, 82, 82)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jButton4))
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
 
-        jPanel1.add(homePanel, "card2");
+        MainPanel.add(homePanel, "card2");
 
         registrationPanel.setBackground(new java.awt.Color(204, 204, 204));
         registrationPanel.setPreferredSize(new java.awt.Dimension(850, 540));
@@ -477,7 +487,7 @@ private void loadDeletedTable() {
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGREG.png"))); // NOI18N
         registrationPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
-        jPanel1.add(registrationPanel, "card3");
+        MainPanel.add(registrationPanel, "card3");
 
         loginPanel.setBackground(new java.awt.Color(153, 204, 255));
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -608,7 +618,7 @@ private void loadDeletedTable() {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGlogin.png"))); // NOI18N
         loginPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
-        jPanel1.add(loginPanel, "card4");
+        MainPanel.add(loginPanel, "card4");
 
         adminPanel.setBackground(new java.awt.Color(153, 204, 255));
         adminPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -619,10 +629,10 @@ private void loadDeletedTable() {
                 cmbSortByActionPerformed(evt);
             }
         });
-        adminPanel.add(cmbSortBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, -1, -1));
+        adminPanel.add(cmbSortBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 90, -1));
 
-        cmbSearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "CitizenshipID", " " }));
-        adminPanel.add(cmbSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 70, -1));
+        cmbSearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "CitizenshipID" }));
+        adminPanel.add(cmbSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 90, -1));
 
         MainTable.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         MainTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -706,7 +716,7 @@ private void loadDeletedTable() {
                 SortMainTableBtnActionPerformed(evt);
             }
         });
-        adminPanel.add(SortMainTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, -1, -1));
+        adminPanel.add(SortMainTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 60, -1, -1));
 
         BinarySearchBtn.setText("Search");
         BinarySearchBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -714,14 +724,14 @@ private void loadDeletedTable() {
                 BinarySearchBtnActionPerformed(evt);
             }
         });
-        adminPanel.add(BinarySearchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, -1, -1));
+        adminPanel.add(BinarySearchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, -1, -1));
 
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchActionPerformed(evt);
             }
         });
-        adminPanel.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 180, -1));
+        adminPanel.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 180, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 102, 102));
         jButton7.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
@@ -736,7 +746,7 @@ private void loadDeletedTable() {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGadmin.png"))); // NOI18N
         adminPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
-        jPanel1.add(adminPanel, "card5");
+        MainPanel.add(adminPanel, "card5");
 
         updatePanel.setBackground(new java.awt.Color(153, 204, 255));
         updatePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -839,12 +849,19 @@ private void loadDeletedTable() {
         });
         updatePanel.add(BackUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, 110, 30));
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGdesign.png"))); // NOI18N
-        updatePanel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 550));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGupdate.png"))); // NOI18N
+        updatePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
-        jPanel1.add(updatePanel, "card6");
+        MainPanel.add(updatePanel, "card6");
 
         historyPanel.setBackground(new java.awt.Color(153, 204, 255));
+        historyPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/VerifiedIcon.png"))); // NOI18N
+        historyPanel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 40, 40));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/DeletedIcon.png"))); // NOI18N
+        historyPanel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 40, 40));
 
         DeletedTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -885,6 +902,8 @@ private void loadDeletedTable() {
         ));
         jScrollPane2.setViewportView(DeletedTable);
 
+        historyPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 366, -1));
+
         VerifiedTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -924,6 +943,8 @@ private void loadDeletedTable() {
         ));
         jScrollPane3.setViewportView(VerifiedTable);
 
+        historyPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 60, 408, -1));
+
         jButton10.setBackground(new java.awt.Color(255, 102, 102));
         jButton10.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jButton10.setText("Back");
@@ -932,104 +953,69 @@ private void loadDeletedTable() {
                 jButton10ActionPerformed(evt);
             }
         });
+        historyPanel.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 100, -1));
 
-        jLabel28.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel28.setBackground(new java.awt.Color(255, 255, 153));
+        jLabel28.setFont(new java.awt.Font("Bookman Old Style", 1, 20)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(51, 51, 51));
         jLabel28.setText("Deleted");
+        historyPanel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 90, 30));
 
-        jLabel29.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Bookman Old Style", 1, 20)); // NOI18N
         jLabel29.setText("Verified");
+        historyPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 132, 31));
 
-        SortDeletedTableBtn.setText("Sort");
+        SortDeletedTableBtn.setBackground(new java.awt.Color(255, 204, 204));
+        SortDeletedTableBtn.setText("Sort By Name");
         SortDeletedTableBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SortDeletedTableBtnActionPerformed(evt);
             }
         });
+        historyPanel.add(SortDeletedTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
 
-        SortVerifiedTableBtn.setText("Sort");
+        SortVerifiedTableBtn.setBackground(new java.awt.Color(204, 255, 204));
+        SortVerifiedTableBtn.setText("Sort By Name");
         SortVerifiedTableBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SortVerifiedTableBtnActionPerformed(evt);
             }
         });
+        historyPanel.add(SortVerifiedTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, -1, -1));
 
-        javax.swing.GroupLayout historyPanelLayout = new javax.swing.GroupLayout(historyPanel);
-        historyPanel.setLayout(historyPanelLayout);
-        historyPanelLayout.setHorizontalGroup(
-            historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historyPanelLayout.createSequentialGroup()
-                .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(historyPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, historyPanelLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(historyPanelLayout.createSequentialGroup()
-                                .addComponent(SortDeletedTableBtn)
-                                .addGap(73, 73, 73)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(historyPanelLayout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(SortVerifiedTableBtn)
-                                .addGap(101, 101, 101)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(21, 21, 21))
-        );
-        historyPanelLayout.setVerticalGroup(
-            historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(historyPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SortDeletedTableBtn)
-                    .addComponent(SortVerifiedTableBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane3))
-                .addGap(18, 18, 18)
-                .addComponent(jButton10)
-                .addContainerGap())
-        );
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGhistory.png"))); // NOI18N
+        historyPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 560));
 
-        jPanel1.add(historyPanel, "card7");
+        MainPanel.add(historyPanel, "card7");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Banner, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card5");
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card5");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void BackUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackUpdateActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card2");
     }//GEN-LAST:event_BackUpdateActionPerformed
 
     private void btnFindActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformedActionPerformed
@@ -1127,8 +1113,8 @@ private void loadDeletedTable() {
     }//GEN-LAST:event_VerifyBtnActionPerformed
 
     private void HistoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryBtnActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card7");
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card7");
     }//GEN-LAST:event_HistoryBtnActionPerformed
 
     private void DeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBtnActionPerformed
@@ -1182,8 +1168,8 @@ private void loadDeletedTable() {
             JOptionPane.showMessageDialog(this, "Login Successful");
 
             // open ADMIN PANEL
-            CardLayout cl = (CardLayout) jPanel1.getLayout();
-            cl.show(jPanel1, "card5"); // admin dashboard panel
+            CardLayout cl = (CardLayout) MainPanel.getLayout();
+            cl.show(MainPanel, "card5"); // admin dashboard panel
             loadTable();
         } 
         else
@@ -1270,32 +1256,9 @@ private void loadDeletedTable() {
     }//GEN-LAST:event_txtnameActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card2");
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card4");
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card6");
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card3");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void SortMainTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortMainTableBtnActionPerformed
        // Get selected sort option from dropdown (JComboBox)
@@ -1471,13 +1434,13 @@ private void highlightVoterInTable(Voter foundVoter) {
     }//GEN-LAST:event_BinarySearchBtnActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card2");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        CardLayout cl = (CardLayout) jPanel1.getLayout();
-        cl.show(jPanel1, "card2");
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card4");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
@@ -1487,6 +1450,29 @@ private void highlightVoterInTable(Voter foundVoter) {
     private void cmbSortByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSortByActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbSortByActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card3");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card6");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        CardLayout cl = (CardLayout) MainPanel.getLayout();
+        cl.show(MainPanel, "card4");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1515,10 +1501,12 @@ private void highlightVoterInTable(Voter foundVoter) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackUpdate;
+    private javax.swing.JLabel Banner;
     private javax.swing.JButton BinarySearchBtn;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JTable DeletedTable;
     private javax.swing.JButton HistoryBtn;
+    private javax.swing.JPanel MainPanel;
     private javax.swing.JTable MainTable;
     private javax.swing.JButton RegisterBtn;
     private javax.swing.JButton SortDeletedTableBtn;
@@ -1552,6 +1540,7 @@ private void highlightVoterInTable(Voter foundVoter) {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1565,14 +1554,14 @@ private void highlightVoterInTable(Voter foundVoter) {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
