@@ -487,7 +487,7 @@ public class VCRScontroller {
         // Not found
         return null;
     }
-    
+   
     // Get search statistics for demonstration
     public String getSearchStatistics(String searchName) {
         if (front == -1) {
@@ -515,4 +515,101 @@ public class VCRScontroller {
         
         return "Not found after " + comparisons + " comparisons";
     }
+    public Voter binarySearchByCitizenshipId(String searchId) {
+    if (front == -1) {
+        return null;
+    }
+    
+    // Step 1: Sort the queue data by citizenship ID
+    Voter[] sortedArray = insertionSortByCitizenshipId();
+    
+    if (sortedArray.length == 0) {
+        return null;
+    }
+    
+    // Step 2: Perform Binary Search
+    int left = 0;
+    int right = sortedArray.length - 1;
+    
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        
+        // Compare search ID with middle element
+        int comparison = searchId.trim().compareTo(sortedArray[mid].getCitizenshipId().trim());
+        
+        if (comparison == 0) {
+            // Found exact match
+            return sortedArray[mid];
+        } else if (comparison < 0) {
+            // Search in left half
+            right = mid - 1;
+        } else {
+            // Search in right half
+            left = mid + 1;
+        }
+    }
+    
+    // Not found
+    return null;
+}
+
+// Helper: Insertion Sort by Citizenship ID
+private Voter[] insertionSortByCitizenshipId() {
+    if (front == -1) {
+        return new Voter[0];
+    }
+    
+    // Copy queue to array
+    int size = rear - front + 1;
+    Voter[] sortedArray = new Voter[size];
+    int index = 0;
+    
+    for (int i = front; i <= rear; i++) {
+        if (votersQueue[i] != null) {
+            sortedArray[index++] = votersQueue[i];
+        }
+    }
+    
+    // Insertion Sort by Citizenship ID
+    for (int i = 1; i < index; i++) {
+        Voter key = sortedArray[i];
+        int j = i - 1;
+        
+        while (j >= 0 && sortedArray[j].getCitizenshipId().compareTo(key.getCitizenshipId()) > 0) {
+            sortedArray[j + 1] = sortedArray[j];
+            j = j - 1;
+        }
+        sortedArray[j + 1] = key;
+    }
+    
+    return sortedArray;
+}
+
+// Get search statistics for demonstration (Citizenship ID)
+public String getSearchStatisticsByCitizenshipId(String searchId) {
+    if (front == -1) {
+        return "Queue is empty";
+    }
+    
+    Voter[] sortedArray = insertionSortByCitizenshipId();
+    int comparisons = 0;
+    int left = 0;
+    int right = sortedArray.length - 1;
+    
+    while (left <= right) {
+        comparisons++;
+        int mid = (left + right) / 2;
+        int comparison = searchId.trim().compareTo(sortedArray[mid].getCitizenshipId().trim());
+        
+        if (comparison == 0) {
+            return "Found in " + comparisons + " comparisons using Binary Search";
+        } else if (comparison < 0) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    
+    return "Not found after " + comparisons + " comparisons";
+}
 }
