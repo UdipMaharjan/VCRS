@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import Model.Admin;
 import Model.Voter;
 
-public class VCRScontroller 
-{
+public class VCRScontroller {
     private ArrayList<Admin> admins = new ArrayList<>();
     
     // Array-based Queue for voters (MainTable)
@@ -251,8 +250,10 @@ public class VCRScontroller
         
         return true;
     }
-      
-// Insertion sort
+    
+    // ===================== SORTING ALGORITHMS =====================
+    
+    // 1. INSERTION SORT - For MainTable (Active Queue)
     public Voter[] insertionSortByName() {
         if (front == -1) {
             return new Voter[0];
@@ -284,8 +285,54 @@ public class VCRScontroller
         
         return sortedArray;
     }
-     
-    //Selection Sort
+    
+    // 1B. INSERTION SORT BY DOB - For MainTable
+    public Voter[] insertionSortByDOB() {
+        if (front == -1) {
+            return new Voter[0];
+        }
+        
+        // Copy queue to array
+        int size = rear - front + 1;
+        Voter[] sortedArray = new Voter[size];
+        int index = 0;
+        
+        for (int i = front; i <= rear; i++) {
+            if (votersQueue[i] != null) {
+                sortedArray[index++] = votersQueue[i];
+            }
+        }
+        
+        // Insertion Sort by DOB
+        for (int i = 1; i < index; i++) {
+            Voter key = sortedArray[i];
+            int j = i - 1;
+            
+            // Compare DOB (DD-MM-YYYY format)
+            while (j >= 0 && compareDOB(sortedArray[j].getDOB(), key.getDOB()) > 0) {
+                sortedArray[j + 1] = sortedArray[j];
+                j = j - 1;
+            }
+            sortedArray[j + 1] = key;
+        }
+        
+        return sortedArray;
+    }
+    
+    // Helper method to compare DOB in DD-MM-YYYY format
+    private int compareDOB(String dob1, String dob2) {
+        // Convert DD-MM-YYYY to comparable format YYYYMMDD
+        String[] parts1 = dob1.split("-");
+        String[] parts2 = dob2.split("-");
+        
+        // YYYY MM DD
+        String date1 = parts1[2] + parts1[1] + parts1[0];
+        String date2 = parts2[2] + parts2[1] + parts2[0];
+        
+        return date1.compareTo(date2);
+    }
+    
+    // 2. SELECTION SORT - For DeletedTable (Stack)
     public Voter[] selectionSortDeletedByName() {
         if (deletedTop == -1) {
             return new Voter[0];
@@ -319,8 +366,8 @@ public class VCRScontroller
         return sortedArray;
     }
     
-    //Merge sort
-     public Voter[] mergeSortVerifiedByName() {
+    // 3. MERGE SORT - For VerifiedTable (Stack)
+    public Voter[] mergeSortVerifiedByName() {
         if (verifiedTop == -1) {
             return new Voter[0];
         }
@@ -399,7 +446,8 @@ public class VCRScontroller
             k++;
         }
     }
-     // ===================== BINARY SEARCH =====================
+    
+    // ===================== BINARY SEARCH =====================
     
     // Binary Search by Name in MainTable (requires sorted data)
     public Voter binarySearchByName(String searchName) {
