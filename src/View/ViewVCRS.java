@@ -115,6 +115,7 @@ private void loadDeletedTable() {
     private void initComponents() {
 
         jProgressBar1 = new javax.swing.JProgressBar();
+        bgSortOrder = new javax.swing.ButtonGroup();
         Banner = new javax.swing.JLabel();
         MainPanel = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
@@ -160,6 +161,8 @@ private void loadDeletedTable() {
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
         adminPanel = new javax.swing.JPanel();
+        rbDescending = new javax.swing.JRadioButton();
+        rbAscending = new javax.swing.JRadioButton();
         cmbSortBy = new javax.swing.JComboBox<>();
         cmbSearchBy = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -623,13 +626,29 @@ private void loadDeletedTable() {
         adminPanel.setBackground(new java.awt.Color(153, 204, 255));
         adminPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        bgSortOrder.add(rbDescending);
+        rbDescending.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        rbDescending.setText("Descending");
+        rbDescending.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbDescendingActionPerformed(evt);
+            }
+        });
+        adminPanel.add(rbDescending, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, -1, -1));
+
+        bgSortOrder.add(rbAscending);
+        rbAscending.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        rbAscending.setSelected(true);
+        rbAscending.setText("Ascending");
+        adminPanel.add(rbAscending, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, -1, -1));
+
         cmbSortBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "DOB" }));
         cmbSortBy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSortByActionPerformed(evt);
             }
         });
-        adminPanel.add(cmbSortBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 90, -1));
+        adminPanel.add(cmbSortBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 90, -1));
 
         cmbSearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "CitizenshipID" }));
         adminPanel.add(cmbSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 90, -1));
@@ -1261,7 +1280,7 @@ private void loadDeletedTable() {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void SortMainTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortMainTableBtnActionPerformed
-       // Get selected sort option from dropdown (JComboBox)
+    // Get selected sort field from dropdown (JComboBox)
     String sortBy = (String) cmbSortBy.getSelectedItem();
     
     if (sortBy == null) {
@@ -1269,16 +1288,29 @@ private void loadDeletedTable() {
         return;
     }
     
+    // Check which radio button is selected (Ascending or Descending)
+    boolean isAscending = rbAscending.isSelected();
+    
     Voter[] sortedVoters = null;
     String message = "";
     
-    // Sort based on dropdown selection
+    // Sort based on dropdown and radio button selection
     if (sortBy.equals("Name")) {
-        sortedVoters = controller.insertionSortByName();
-        message = "MainTable sorted by Name using Insertion Sort";
+        if (isAscending) {
+            sortedVoters = controller.insertionSortByName();
+            message = "MainTable sorted by Name (A→Z) using Insertion Sort";
+        } else {
+            sortedVoters = controller.insertionSortByNameDescending();
+            message = "MainTable sorted by Name (Z→A) using Insertion Sort";
+        }
     } else if (sortBy.equals("DOB")) {
-        sortedVoters = controller.insertionSortByDOB();
-        message = "MainTable sorted by DOB (oldest first) using Insertion Sort";
+        if (isAscending) {
+            sortedVoters = controller.insertionSortByDOB();
+            message = "MainTable sorted by DOB (Oldest→Newest) using Insertion Sort";
+        } else {
+            sortedVoters = controller.insertionSortByDOBDescending();
+            message = "MainTable sorted by DOB (Newest→Oldest) using Insertion Sort";
+        }
     }
     
     if (sortedVoters == null || sortedVoters.length == 0) {
@@ -1474,6 +1506,10 @@ private void highlightVoterInTable(Voter foundVoter) {
         cl.show(MainPanel, "card4");
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void rbDescendingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDescendingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbDescendingActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1516,6 +1552,7 @@ private void highlightVoterInTable(Voter foundVoter) {
     private javax.swing.JTable VerifiedTable;
     private javax.swing.JButton VerifyBtn;
     private javax.swing.JPanel adminPanel;
+    private javax.swing.ButtonGroup bgSortOrder;
     private javax.swing.JButton btnFindActionPerformed;
     private javax.swing.JButton btnLogin;
     private javax.swing.JComboBox<String> cmbSearchBy;
@@ -1573,6 +1610,8 @@ private void highlightVoterInTable(Voter foundVoter) {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel loginPanel;
+    private javax.swing.JRadioButton rbAscending;
+    private javax.swing.JRadioButton rbDescending;
     private javax.swing.JPanel registrationPanel;
     private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtSearchCitizenship;
