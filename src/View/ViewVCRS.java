@@ -121,10 +121,10 @@ private void loadDeletedTable() {
         homePanel = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        homeRegisterBtn = new javax.swing.JButton();
+        homeUpdateBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        adminLoginBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         registrationPanel = new javax.swing.JPanel();
@@ -240,32 +240,32 @@ private void loadDeletedTable() {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jButton2.setText("Register");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        homeRegisterBtn.setBackground(new java.awt.Color(255, 204, 204));
+        homeRegisterBtn.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        homeRegisterBtn.setText("Register");
+        homeRegisterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                homeRegisterBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 204));
-        jButton3.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jButton3.setText("Update");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        homeUpdateBtn.setBackground(new java.awt.Color(255, 255, 204));
+        homeUpdateBtn.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        homeUpdateBtn.setText("Update");
+        homeUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                homeUpdateBtnActionPerformed(evt);
             }
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/NepalMap.png"))); // NOI18N
 
-        jButton4.setBackground(new java.awt.Color(102, 255, 204));
-        jButton4.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jButton4.setText("LOGIN");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        adminLoginBtn.setBackground(new java.awt.Color(102, 255, 204));
+        adminLoginBtn.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        adminLoginBtn.setText("LOGIN");
+        adminLoginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                adminLoginBtnActionPerformed(evt);
             }
         });
 
@@ -281,7 +281,7 @@ private void loadDeletedTable() {
                 .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(homePanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(adminLoginBtn)
                         .addGap(99, 99, 99))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -292,9 +292,9 @@ private void loadDeletedTable() {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addComponent(homeRegisterBtn)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3)
+                                .addComponent(homeUpdateBtn)
                                 .addGap(30, 30, 30)))))
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -316,12 +316,12 @@ private void loadDeletedTable() {
                         .addGap(28, 28, 28)
                         .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
+                            .addComponent(homeRegisterBtn)
+                            .addComponent(homeUpdateBtn))
                         .addGap(82, 82, 82)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addComponent(adminLoginBtn))
                     .addGroup(homePanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                         .addComponent(jLabel2)))
@@ -1012,9 +1012,7 @@ private void loadDeletedTable() {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Banner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1491,20 +1489,20 @@ private void highlightVoterInTable(Voter foundVoter) {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void homeRegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeRegisterBtnActionPerformed
         CardLayout cl = (CardLayout) MainPanel.getLayout();
         cl.show(MainPanel, "card3");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_homeRegisterBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void homeUpdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeUpdateBtnActionPerformed
         CardLayout cl = (CardLayout) MainPanel.getLayout();
         cl.show(MainPanel, "card6");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_homeUpdateBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void adminLoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLoginBtnActionPerformed
         CardLayout cl = (CardLayout) MainPanel.getLayout();
         cl.show(MainPanel, "card4");
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_adminLoginBtnActionPerformed
 
     private void rbDescendingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDescendingActionPerformed
         // TODO add your handling code here:
@@ -1551,6 +1549,7 @@ private void highlightVoterInTable(Voter foundVoter) {
     private javax.swing.JButton UpdateBtn;
     private javax.swing.JTable VerifiedTable;
     private javax.swing.JButton VerifyBtn;
+    private javax.swing.JButton adminLoginBtn;
     private javax.swing.JPanel adminPanel;
     private javax.swing.ButtonGroup bgSortOrder;
     private javax.swing.JButton btnFindActionPerformed;
@@ -1559,11 +1558,10 @@ private void highlightVoterInTable(Voter foundVoter) {
     private javax.swing.JComboBox<String> cmbSortBy;
     private javax.swing.JPanel historyPanel;
     private javax.swing.JPanel homePanel;
+    private javax.swing.JButton homeRegisterBtn;
+    private javax.swing.JButton homeUpdateBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
