@@ -170,8 +170,8 @@ private void loadDeletedTable() {
         DeleteBtn = new javax.swing.JButton();
         HistoryBtn = new javax.swing.JButton();
         VerifyBtn = new javax.swing.JButton();
-        SortMainTableBtn = new javax.swing.JButton();
-        BinarySearchBtn = new javax.swing.JButton();
+        btnSortMainTable = new javax.swing.JButton();
+        btnSearchMainTable = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -191,7 +191,7 @@ private void loadDeletedTable() {
         txtphone1 = new javax.swing.JTextField();
         txtSearchCitizenship = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        btnFindActionPerformed = new javax.swing.JButton();
+        btnFindUpdate = new javax.swing.JButton();
         BackUpdate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         historyPanel = new javax.swing.JPanel();
@@ -204,8 +204,8 @@ private void loadDeletedTable() {
         jButton10 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        SortDeletedTableBtn = new javax.swing.JButton();
-        SortVerifiedTableBtn = new javax.swing.JButton();
+        btnSortDeletedTable = new javax.swing.JButton();
+        btnSortVerifiedTable = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -729,21 +729,21 @@ private void loadDeletedTable() {
         });
         adminPanel.add(VerifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 100, 40));
 
-        SortMainTableBtn.setText("Sort");
-        SortMainTableBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSortMainTable.setText("Sort");
+        btnSortMainTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SortMainTableBtnActionPerformed(evt);
+                btnSortMainTableActionPerformed(evt);
             }
         });
-        adminPanel.add(SortMainTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 60, -1, -1));
+        adminPanel.add(btnSortMainTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 60, -1, -1));
 
-        BinarySearchBtn.setText("Search");
-        BinarySearchBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchMainTable.setText("Search");
+        btnSearchMainTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BinarySearchBtnActionPerformed(evt);
+                btnSearchMainTableActionPerformed(evt);
             }
         });
-        adminPanel.add(BinarySearchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, -1, -1));
+        adminPanel.add(btnSearchMainTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, -1, -1));
 
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -849,14 +849,14 @@ private void loadDeletedTable() {
         jLabel26.setText("Search:");
         updatePanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 38, 43, -1));
 
-        btnFindActionPerformed.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
-        btnFindActionPerformed.setText("Find");
-        btnFindActionPerformed.addActionListener(new java.awt.event.ActionListener() {
+        btnFindUpdate.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        btnFindUpdate.setText("Find");
+        btnFindUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFindActionPerformedActionPerformed(evt);
+                btnFindUpdateActionPerformed(evt);
             }
         });
-        updatePanel.add(btnFindActionPerformed, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 36, -1, 22));
+        updatePanel.add(btnFindUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 36, -1, 22));
 
         BackUpdate.setBackground(new java.awt.Color(255, 102, 102));
         BackUpdate.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
@@ -984,23 +984,23 @@ private void loadDeletedTable() {
         jLabel29.setText("Verified");
         historyPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 132, 31));
 
-        SortDeletedTableBtn.setBackground(new java.awt.Color(255, 204, 204));
-        SortDeletedTableBtn.setText("Sort By Name");
-        SortDeletedTableBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSortDeletedTable.setBackground(new java.awt.Color(255, 204, 204));
+        btnSortDeletedTable.setText("Sort By Name");
+        btnSortDeletedTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SortDeletedTableBtnActionPerformed(evt);
+                btnSortDeletedTableActionPerformed(evt);
             }
         });
-        historyPanel.add(SortDeletedTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
+        historyPanel.add(btnSortDeletedTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
 
-        SortVerifiedTableBtn.setBackground(new java.awt.Color(204, 255, 204));
-        SortVerifiedTableBtn.setText("Sort By Name");
-        SortVerifiedTableBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnSortVerifiedTable.setBackground(new java.awt.Color(204, 255, 204));
+        btnSortVerifiedTable.setText("Sort By Name");
+        btnSortVerifiedTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SortVerifiedTableBtnActionPerformed(evt);
+                btnSortVerifiedTableActionPerformed(evt);
             }
         });
-        historyPanel.add(SortVerifiedTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, -1, -1));
+        historyPanel.add(btnSortVerifiedTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BGhistory.png"))); // NOI18N
         historyPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 560));
@@ -1035,7 +1035,7 @@ private void loadDeletedTable() {
         cl.show(MainPanel, "card2");
     }//GEN-LAST:event_BackUpdateActionPerformed
 
-    private void btnFindActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformedActionPerformed
+    private void btnFindUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindUpdateActionPerformed
         String citizenshipId = txtSearchCitizenship.getText();
 
         Voter v = controller.findVoterByCitizenship(citizenshipId);
@@ -1053,7 +1053,7 @@ private void loadDeletedTable() {
         txtphone1.setText(String.valueOf(v.getPhone()));
 
         JOptionPane.showMessageDialog(this, "Voter loaded. You may update details.");
-    }//GEN-LAST:event_btnFindActionPerformedActionPerformed
+    }//GEN-LAST:event_btnFindUpdateActionPerformed
 
     private void txtSearchCitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchCitizenshipActionPerformed
         // TODO add your handling code here:
@@ -1277,7 +1277,7 @@ private void loadDeletedTable() {
         cl.show(MainPanel, "card2");
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void SortMainTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortMainTableBtnActionPerformed
+    private void btnSortMainTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortMainTableActionPerformed
     // Get selected sort field from dropdown (JComboBox)
     String sortBy = (String) cmbSortBy.getSelectedItem();
     
@@ -1336,9 +1336,9 @@ private void loadDeletedTable() {
     }
     
     JOptionPane.showMessageDialog(this, message);
-    }//GEN-LAST:event_SortMainTableBtnActionPerformed
+    }//GEN-LAST:event_btnSortMainTableActionPerformed
 
-    private void SortDeletedTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortDeletedTableBtnActionPerformed
+    private void btnSortDeletedTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortDeletedTableActionPerformed
          Voter[] sortedVoters = controller.selectionSortDeletedByName();
     
     if (sortedVoters.length == 0) {
@@ -1363,9 +1363,9 @@ private void loadDeletedTable() {
     }
     
     JOptionPane.showMessageDialog(this, "DeletedTable sorted by Name using Selection Sort");
-    }//GEN-LAST:event_SortDeletedTableBtnActionPerformed
+    }//GEN-LAST:event_btnSortDeletedTableActionPerformed
 
-    private void SortVerifiedTableBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortVerifiedTableBtnActionPerformed
+    private void btnSortVerifiedTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortVerifiedTableActionPerformed
          Voter[] sortedVoters = controller.mergeSortVerifiedByName();
     
     if (sortedVoters.length == 0) {
@@ -1391,9 +1391,9 @@ private void loadDeletedTable() {
     }
     
     JOptionPane.showMessageDialog(this, "VerifiedTable sorted by Name using Merge Sort");
-    }//GEN-LAST:event_SortVerifiedTableBtnActionPerformed
+    }//GEN-LAST:event_btnSortVerifiedTableActionPerformed
 
-    private void BinarySearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinarySearchBtnActionPerformed
+    private void btnSearchMainTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMainTableActionPerformed
     // Get search term from text field
     String searchTerm = txtSearch.getText().trim();
     
@@ -1461,7 +1461,7 @@ private void highlightVoterInTable(Voter foundVoter) {
             break;
         }
     }
-    }//GEN-LAST:event_BinarySearchBtnActionPerformed
+    }//GEN-LAST:event_btnSearchMainTableActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         CardLayout cl = (CardLayout) MainPanel.getLayout();
@@ -1536,24 +1536,24 @@ private void highlightVoterInTable(Voter foundVoter) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackUpdate;
     private javax.swing.JLabel Banner;
-    private javax.swing.JButton BinarySearchBtn;
     private javax.swing.JButton DeleteBtn;
     private javax.swing.JTable DeletedTable;
     private javax.swing.JButton HistoryBtn;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JTable MainTable;
     private javax.swing.JButton RegisterBtn;
-    private javax.swing.JButton SortDeletedTableBtn;
-    private javax.swing.JButton SortMainTableBtn;
-    private javax.swing.JButton SortVerifiedTableBtn;
     private javax.swing.JButton UpdateBtn;
     private javax.swing.JTable VerifiedTable;
     private javax.swing.JButton VerifyBtn;
     private javax.swing.JButton adminLoginBtn;
     private javax.swing.JPanel adminPanel;
     private javax.swing.ButtonGroup bgSortOrder;
-    private javax.swing.JButton btnFindActionPerformed;
+    private javax.swing.JButton btnFindUpdate;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnSearchMainTable;
+    private javax.swing.JButton btnSortDeletedTable;
+    private javax.swing.JButton btnSortMainTable;
+    private javax.swing.JButton btnSortVerifiedTable;
     private javax.swing.JComboBox<String> cmbSearchBy;
     private javax.swing.JComboBox<String> cmbSortBy;
     private javax.swing.JPanel historyPanel;
