@@ -1119,14 +1119,18 @@ private void loadDeletedTable() {
             return;
         }
 
-        boolean verified = controller.verifyVoter(citizenshipId);
-
-        if (verified) {
-            JOptionPane.showMessageDialog(this, "Voter verified successfully");
-
-            loadTable();           // Active voters
-            loadVerifiedTable();   // Verified voters
-        }
+try {
+    boolean verified = controller.verifyVoter(citizenshipId);
+    if (verified) {
+        JOptionPane.showMessageDialog(this, "Voter verified successfully");
+        loadTable();           // Active voters
+        loadVerifiedTable();   // Verified voters
+    } else {
+        JOptionPane.showMessageDialog(this, "Voter not found");
+    }
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, e.getMessage());
+}
     }//GEN-LAST:event_VerifyBtnActionPerformed
 
     private void HistoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryBtnActionPerformed
@@ -1156,13 +1160,18 @@ private void loadDeletedTable() {
             return;
         }
 
-        boolean deleted = controller.deleteVoter(citizenshipId);
-
-        if (deleted) {
-            JOptionPane.showMessageDialog(this, "Voter deleted successfully");
-            loadTable();
-            loadDeletedTable();
-        }
+        try {
+    boolean deleted = controller.deleteVoter(citizenshipId);
+    if (deleted) {
+        JOptionPane.showMessageDialog(this, "Voter deleted successfully");
+        loadTable();
+        loadDeletedTable();
+    } else {
+        JOptionPane.showMessageDialog(this, "Voter not found");
+    }
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, e.getMessage());
+}
     }//GEN-LAST:event_DeleteBtnActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -1256,7 +1265,7 @@ private void loadDeletedTable() {
             loadTable();
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Something went wrong");
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_RegisterBtnActionPerformed
 

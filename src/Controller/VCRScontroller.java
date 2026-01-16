@@ -62,9 +62,11 @@ public class VCRScontroller {
         return true;
     }
     
-    public void addVoter(Voter v) {
-        enqueueVoter(v);
+    public void addVoter(Voter v) throws Exception {
+    if (!enqueueVoter(v)) {
+        throw new Exception("Queue is FULL! Unable to register.");
     }
+}
     
     // Get voters for table display
     public Voter[] getVotersQueue() {
@@ -80,18 +82,18 @@ public class VCRScontroller {
     }
     
     // ===================== STACK OPERATIONS =====================
-    public boolean pushToVerified(Voter v) {
+    public boolean pushToVerified(Voter v) throws Exception {
         if (verifiedTop == SIZE - 1) {
-            return false; // Stack is full
+            throw new Exception("Verified Stack is FULL! Cannot verify more voters.");
         }
         verifiedTop++;
         verifiedStack[verifiedTop] = v;
         return true;
     }
     
-    public boolean pushToDeleted(Voter v) {
+    public boolean pushToDeleted(Voter v) throws Exception{
         if (deletedTop == SIZE - 1) {
-            return false; // Stack is full
+            throw new Exception("Deleted Stack is FULL! Cannot delete more voters.");
         }
         deletedTop++;
         deletedStack[deletedTop] = v;
@@ -170,7 +172,7 @@ public class VCRScontroller {
     }
     
     // ===================== DELETE VOTER =====================
-    public boolean deleteVoter(String citizenshipId) {
+    public boolean deleteVoter(String citizenshipId) throws Exception{
         if (front == -1) {
             return false;
         }
@@ -191,8 +193,10 @@ public class VCRScontroller {
             return false;
         }
         
-        // Push to deleted stack
-        pushToDeleted(voterToDelete);
+        if (! pushToDeleted(voterToDelete)) {
+    throw new Exception("Deleted Stack is FULL! Cannot verify more voters.");
+}
+       
         
         // Remove from queue by shifting elements
         for (int i = deleteIndex; i < rear; i++) {
@@ -211,45 +215,47 @@ public class VCRScontroller {
     }
     
     // ===================== VERIFY VOTER =====================
-    public boolean verifyVoter(String citizenshipId) {
-        if (front == -1) {
-            return false;
-        }
-        
-        int verifyIndex = -1;
-        Voter voterToVerify = null;
-        
-        // Find the voter
-        for (int i = front; i <= rear; i++) {
-            if (votersQueue[i] != null && votersQueue[i].getCitizenshipId().equals(citizenshipId)) {
-                voterToVerify = votersQueue[i];
-                verifyIndex = i;
-                break;
-            }
-        }
-        
-        if (voterToVerify == null) {
-            return false;
-        }
-        
-        // Push to verified stack
-        pushToVerified(voterToVerify);
-        
-        // Remove from queue by shifting elements
-        for (int i = verifyIndex; i < rear; i++) {
-            votersQueue[i] = votersQueue[i + 1];
-        }
-        votersQueue[rear] = null;
-        rear--;
-        
-        // Reset queue if empty
-        if (front > rear) {
-            front = -1;
-            rear = -1;
-        }
-        
-        return true;
+public boolean verifyVoter(String citizenshipId) throws Exception {
+    if (front == -1) {
+        return false;
     }
+    
+    int verifyIndex = -1;
+    Voter voterToVerify = null;
+    
+    // Find the voter
+    for (int i = front; i <= rear; i++) {
+        if (votersQueue[i] != null && votersQueue[i].getCitizenshipId().equals(citizenshipId)) {
+            voterToVerify = votersQueue[i];
+            verifyIndex = i;
+            break;
+        }
+    }
+    
+    if (voterToVerify == null) {
+        return false;
+    }
+    
+    // Push to verified stack (check if successful)
+    if (!pushToVerified(voterToVerify)) {
+        throw new Exception("Verified Stack is FULL! Cannot verify more voters.");
+    }
+    
+    // Remove from queue by shifting elements
+    for (int i = verifyIndex; i < rear; i++) {
+        votersQueue[i] = votersQueue[i + 1];
+    }
+    votersQueue[rear] = null;
+    rear--;
+    
+    // Reset queue if empty
+    if (front > rear) {
+        front = -1;
+        rear = -1;
+    }
+    
+    return true;
+}
     
     // ===================== SORTING ALGORITHMS =====================
     
