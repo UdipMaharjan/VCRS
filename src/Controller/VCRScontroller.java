@@ -11,22 +11,22 @@ import Model.Voter;
 public class VCRScontroller {
     private ArrayList<Admin> admins = new ArrayList<>();
     
-    // Array-based Queue for voters (MainTable)
+   
     private final int SIZE = 50;
     private int front = -1;
     private int rear = -1;
     private Voter[] votersQueue = new Voter[SIZE];
     
-    // Array-based Stack for verified voters
+    
     private int verifiedTop = -1;
     private Voter[] verifiedStack = new Voter[SIZE];
     
-    // Array-based Stack for deleted voters
+  
     private int deletedTop = -1;
     private Voter[] deletedStack = new Voter[SIZE];
     
     public VCRScontroller() {
-        // default admins
+       
         admins.add(new Admin("admin1@gmail.com", "admin123"));
         admins.add(new Admin("admin2@gmail.com", "admin456"));
         
@@ -49,7 +49,7 @@ public class VCRScontroller {
         return false;
     }
     
-    // ===================== QUEUE OPERATIONS =====================
+   
     public boolean enqueueVoter(Voter v) {
         if (rear == SIZE - 1) {
             return false; // Queue is full
@@ -68,7 +68,7 @@ public class VCRScontroller {
     }
 }
     
-    // Get voters for table display
+    
     public Voter[] getVotersQueue() {
         return votersQueue;
     }
@@ -81,7 +81,7 @@ public class VCRScontroller {
         return rear;
     }
     
-    // ===================== STACK OPERATIONS =====================
+    
     public boolean pushToVerified(Voter v) throws Exception {
         if (verifiedTop == SIZE - 1) {
             throw new Exception("Verified Stack is FULL! Cannot verify more voters.");
@@ -116,7 +116,7 @@ public class VCRScontroller {
         return deletedTop;
     }
     
-    // ===================== FIND VOTER =====================
+  
     public Voter findVoterByCitizenship(String citizenshipId) {
         if (front == -1) {
             return null;
@@ -129,7 +129,7 @@ public class VCRScontroller {
         return null;
     }
     
-    // ===================== UPDATE VOTER =====================
+    
     public boolean updateVoter(String citizenshipId, String name, String father, String mother, String grandfather, String DOB, String phone) {
         if (front == -1) {
             return false;
@@ -151,7 +151,7 @@ public class VCRScontroller {
             return false;
         }
         
-        // Update voter details
+        
         voterToUpdate.setName(name);
         voterToUpdate.setFather(father);
         voterToUpdate.setMother(mother);
@@ -159,19 +159,19 @@ public class VCRScontroller {
         voterToUpdate.setDOB(DOB);
         voterToUpdate.setPhone(phone);
         
-        // Remove from current position and add to rear (back of queue)
-        // Shift elements left to fill the gap
+        
+        
         for (int i = updateIndex; i < rear; i++) {
             votersQueue[i] = votersQueue[i + 1];
         }
         
-        // Add updated voter to the rear
+       
         votersQueue[rear] = voterToUpdate;
         
         return true;
     }
     
-    // ===================== DELETE VOTER =====================
+    
     public boolean deleteVoter(String citizenshipId) throws Exception{
         if (front == -1) {
             return false;
@@ -180,7 +180,7 @@ public class VCRScontroller {
         int deleteIndex = -1;
         Voter voterToDelete = null;
         
-        // Find the voter
+        
         for (int i = front; i <= rear; i++) {
             if (votersQueue[i] != null && votersQueue[i].getCitizenshipId().equals(citizenshipId)) {
                 voterToDelete = votersQueue[i];
@@ -198,14 +198,14 @@ public class VCRScontroller {
 }
        
         
-        // Remove from queue by shifting elements
+        
         for (int i = deleteIndex; i < rear; i++) {
             votersQueue[i] = votersQueue[i + 1];
         }
         votersQueue[rear] = null;
         rear--;
         
-        // Reset queue if empty
+     
         if (front > rear) {
             front = -1;
             rear = -1;
@@ -214,7 +214,7 @@ public class VCRScontroller {
         return true;
     }
     
-    // ===================== VERIFY VOTER =====================
+    
 public boolean verifyVoter(String citizenshipId) throws Exception {
     if (front == -1) {
         return false;
@@ -223,7 +223,7 @@ public boolean verifyVoter(String citizenshipId) throws Exception {
     int verifyIndex = -1;
     Voter voterToVerify = null;
     
-    // Find the voter
+    
     for (int i = front; i <= rear; i++) {
         if (votersQueue[i] != null && votersQueue[i].getCitizenshipId().equals(citizenshipId)) {
             voterToVerify = votersQueue[i];
@@ -236,19 +236,19 @@ public boolean verifyVoter(String citizenshipId) throws Exception {
         return false;
     }
     
-    // Push to verified stack (check if successful)
+    
     if (!pushToVerified(voterToVerify)) {
         throw new Exception("Verified Stack is FULL! Cannot verify more voters.");
     }
     
-    // Remove from queue by shifting elements
+    
     for (int i = verifyIndex; i < rear; i++) {
         votersQueue[i] = votersQueue[i + 1];
     }
     votersQueue[rear] = null;
     rear--;
     
-    // Reset queue if empty
+    
     if (front > rear) {
         front = -1;
         rear = -1;
@@ -257,7 +257,7 @@ public boolean verifyVoter(String citizenshipId) throws Exception {
     return true;
 }
     
-    // ===================== SORTING ALGORITHMS =====================
+   
     
     // 1. INSERTION SORT - For MainTable (Active Queue)
     public Voter[] insertionSortByName() {
@@ -519,7 +519,6 @@ public boolean verifyVoter(String citizenshipId) throws Exception {
         }
     }
     
-    // ===================== BINARY SEARCH =====================
     
     // Binary Search by Name in MainTable (requires sorted data)
     public Voter binarySearchByName(String searchName) {
